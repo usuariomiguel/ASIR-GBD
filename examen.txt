@@ -1,0 +1,29 @@
+use jardineria;
+delimiter //
+drop procedure if exists ActualizarFecha//
+create procedure ActualizarFecha ()
+begin
+#extraemos el año maximo de la tabla
+select extract( year from (max(fecha_pago))) from pago;
+
+declare codigo_cliente int;
+declare forma_pago varchar(40);
+declare id_transaccion varchar(50);
+declare fecha_pago date;
+declare total decimal(15,2);
+declare 
+DECLARE act_fecha CURSOR FOR
+select  from pago;
+open act_fecha;
+fetch cursor into codigo_cliente,forma_pago,id_transiccion,fecha_pago,total;
+update table fecha_pago
+end //
+
+drop event if exists eventoanio//
+create event eventoanio on schedule
+every 1 year
+starts "2021-12-31 00:01:00"
+ends "2023-12-31 00:01:00"
+do call Actualizar_fechas();
+
+delimiter ;

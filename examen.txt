@@ -18,10 +18,11 @@ loop_act: LOOP
 fetch act_fecha into vid_transaccion;
 if local_hecho = 1 then leave loop_act;
 end if;
-end loop loop_act;
+end loop;
 end //
 #extraemos el año maximo de la tabla
 select extract( year from (max(fecha_pago))) from pago;
+
 drop event if exists eventoanio//
 create event eventoanio on schedule
 every 1 year

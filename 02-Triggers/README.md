@@ -1,6 +1,7 @@
 ## Triggers
 
 ***Crea  un disparador que asegure que el precio de cada producto sea un número mayor de 200.***
+
 ```sql
     delimiter $$
     create trigger actualizacion before insert on productos
@@ -9,7 +10,9 @@
     end if $$
     delimiter ;
 ```
+
 ***haz un disparador que cree un registro en la tabla nrojos con los campos cliente, cuenta, fecha y saldo cada vez que algún cliente se quede en números rojos en alguna de sus cuentas.***
+
 ```sql
 delimiter $$
 DROP TRIGGER IF EXISTS nums_rojos $$
@@ -24,7 +27,9 @@ UPDATE cuenta SET saldo=saldo-1 WHERE cod_cuenta = 3;
 SELECT * FROM ebanca.nrojos;
 SELECT * FROM ebanca.cuenta;
 ```
+
 ***Haz lo necesario para que cada vez que hay un movimiento se actualice el saldo de la cuenta de ese cliente con ese movimiento, ya sea un ingreso o una retirada.***
+
 ```sql
 delimiter $$
 DROP TRIGGER IF EXISTS move$$
@@ -42,7 +47,9 @@ VALUES
 SELECT * FROM ebanca.movimiento;
 SELECT * FROM ebanca.cuenta;
 ```
+
 ***Haz lo necesario para que cada vez que un cliente de ebanca ingrese más de 1000€ se le bonifique con 100€, solo para clientes con cuentas que superen tres años de antigüedad y para movimientos realizados entre el 1 de enero de 2011 y el 31 de marzo de 2011.***
+
 ```sql
 delimiter $$
 DROP TRIGGER IF EXISTS bonus$$
@@ -62,7 +69,9 @@ VALUES
 SELECT * FROM ebanca.movimiento;
 SELECT * FROM ebanca.cuenta;
 ```
+
 ***Crea un trigger para impedir que se aumente el salario de un empleado en más de un 20%.***
+
 ```sql
 delimiter $$
 create trigger veinte after update on empleados for each row
@@ -76,7 +85,9 @@ delimiter ;
 UPDATE empleados SET salario=salario + 50 WHERE IdJefe= 7;
 SELECT * FROM ebanca.empleados;
 ```
+
 ***Crea una tabla HISTORIAL que permita almacenar qué acciones se han realizado sobre la base de datos, qué usuario lo ha realizado y en qué momento. Cuando se produzca la actualización de un empleado, se indicará en la tabla de HISTORIAL.***
+
 ```sql
 delimiter $$
 

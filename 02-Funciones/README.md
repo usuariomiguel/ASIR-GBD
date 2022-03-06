@@ -1,6 +1,9 @@
 # Funciones
+
 ## Funciones Basicos
+
 ***Crea una función que devuelva el valor de la hipotenusa de un triángulo a partir de los valores de sus lados. Utiliza la base de datos Ventas.***
+
 ```sql
 delimiter $$
 drop function if exists nueva$$
@@ -17,7 +20,9 @@ end$$
 delimiter ;
 select nueva (50,60);
 ```
+
 ***Crea una función que calcule el total de puntos en un partido de baloncesto tomando como entrada el resultado en formato 'xxx-xxx'. Utiliza la base de datos Ventas.***
+
 ```sql
 delimiter $$
 drop function if exists EJER2$$
@@ -30,7 +35,9 @@ end$$
 delimiter ;
 select EJER2 ("015-040");
 ```
+
 ***Crea una función que calcule el número de años transcurridos entre 2 fechas donde la primera es menor que la segunda (para probarlo calcula tu edad introduciendo tu fecha de nacimiento y la fecha actual).***
+
 ```sql
 delimiter //
 drop function if exists años$$
@@ -43,7 +50,9 @@ end//
 delimiter ;
 select años ('1993-12-09', curdate());
 ```
+
 ***Crea una función  que devuelva  la edad media de los ciclistas que han ganado alguna etapa. Utiliza la base de datos Ciclistas.***
+
 ```sql
 delimiter $$
 drop function if exists ganadores$$
@@ -58,7 +67,9 @@ delimiter ;
 select ganadores (1);
 ```
 ## Funciones con IF
+
 ***Crea una función que devuelva el mayor de tres números pasados como parámetros, sin usar la función GREATEST. Utiliza la base de datos Ventas.***
+
 ```sql
 delimiter $$
 drop function if exists el_mayor;
@@ -77,6 +88,9 @@ begin
 end;$$
 select el_mayor(75,80,55);
 ```
+
+***Crea una función que devuelva 1 si ganó el de casa, 2 el visitante y 0 si empataron. El parámetro de entrada es el resultado con el formato 'xxx-xxx'. Utiliza la base de datos Ventas.***
+
 ```sql
 delimiter $$
 drop function if exists recuento;
@@ -97,7 +111,9 @@ return ganador;
 end;$$
 SELECT recuento('012-011') AS "Resultado";
 ```
+
 ***Crea una función que diga si una palabra, pasada como parámetro, es palíndroma (por ejemplo: radar, reconocer, sometemos,  ...). Devuelve 1 si es palíndroma y 0 en caso contrario.Utiliza la base de datos Ventas.***
+
 ```sql
 delimiter $$
 drop function if exists palindroma;
@@ -116,7 +132,9 @@ begin
 end;$$
 select palindroma('daad');
 ```
+
 ***Crea una función que devuelva el valor “viejo” si la media de edad de los corredores de un equipo que se le pasa por parámetro es mayor que la media total de todos los corredores. Devolverá “joven” si la media del equipo es menor.***
+
 ```sql
 delimiter $$
 drop function if exists media_edad;
@@ -136,6 +154,8 @@ SELECT media_edad(20);
 ```
 
 ## Funciones con CASE
+
+***Crea una función, usando las estructuras condicionales, que devuelva el literal del día de la semana según un valor de entrada numérico, 1 para lunes, 2 martes, etc. Utiliza la base de datos Ventas.***
 
 ```sql
 delimiter $$
@@ -160,6 +180,9 @@ end$$
 delimiter ; 
 select dias_semana (2);
 ```
+
+***Dado un número, saca una lista con todos los números inferiores a él que son divisibles por 8. Por ejemplo, si el número pasado como parámetro es el 32, nos deberá devolver lo siguiente: 24|16|8|.***
+
 ```sql
 DELIMITER $$
 drop function if exists buenas;

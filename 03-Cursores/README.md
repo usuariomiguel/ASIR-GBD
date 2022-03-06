@@ -1,5 +1,7 @@
 ## Cursores
+
 ***Hacer un procedimiento sobre la BD ventas que muestre los datos de los empleados que no son vendedores y el nombre de su departamento.***
+
 ```sql
 use ventas
 DELIMITER $$
@@ -26,7 +28,9 @@ END $$
 delimiter ;
 call d_nvendedor();
 ```
+
 ***Al ejercicio anterior, añadir que para los empleados cuyo departamento sea MADRID, le subamos el sueldo un 10%***
+
 ```sql
 use ventas
 DELIMITER $$
@@ -55,8 +59,11 @@ END $$
 delimiter ;
 call d_nvendedor();
 ```
+
 ***La empresa va a sufrir obras en la sede en la que se encuentra el despacho “1” y todos los trabajadores de este despacho se van a tener que trasladar al despacho “5”. Recorre la tabla de DIRECTORES, registro a registro, actualizando la información para que nuestra base de datos recoja esta circunstancia.***
-**Datos de la tabla**
+
+**Tabla**
+
 ```sql
 INSERT INTO `despachos` VALUES (1,1),(2,2),(3,5);
 INSERT INTO `directores` VALUES ('D1','Director 1',NULL,1),('D2','Director 2','D1',2),('D21','Director 21','D2',2),('D22','Director 22','D2',2),('D3','Director 3','D1',3),('D31','Director 31','D3',NULL);
@@ -84,12 +91,17 @@ END $$
 DELIMITER ;
 call change_des();
 ```
+
 **Resultado**
-	- Antes
-	- Después
+
+> Antes
+
+> Después
 
 ***Debido a una serie de cambios en la empresa, se va a producir un intercambio entre los directores D1 y D3. A partir de ese momento, los empleados que tenían como jefe al director D1 pasarán a tener como director al director D3 y viceversa. Realiza una rutina que permita implementar lo anterior.***
+
 ### Ejercicio incompleto
+
 ```sql
 DELIMITER $$
 DROP PROCEDURE IF EXISTS change_dir $$
@@ -127,6 +139,9 @@ END $$
 DELIMITER ;
 call change_dir();
 ```
+
 **Resultado**
-	- Antes
-	- Después
+
+>Antes
+
+> Después

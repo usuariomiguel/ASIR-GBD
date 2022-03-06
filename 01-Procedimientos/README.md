@@ -89,7 +89,7 @@ end$$
 call números('40','50');
 ```
 
-### LOOP
+## LOOP
 
 ***Crea un procedimiento que muestre por pantalla los números del 1 al 10.***
 

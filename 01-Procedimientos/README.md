@@ -54,7 +54,7 @@ create procedure recorrido(km int, puertos int)
 call recorrido(100,2);
 ```
 ## IF y CASE
-***Crea una función que reciba 2 números enteros y devuelva 1, si el primer número es divisible por el otro y 0, en caso contrario. Utiliza la base de datos Ventas.***
+***Crea una función que reciba 2 números enteros y devuelva 1, si el primer número es divisible por el otro y 0, en caso contrario.***
 ```sql
 use ventas
 delimiter $$

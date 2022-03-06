@@ -62,7 +62,9 @@ call d_nvendedor();
 
 ***La empresa va a sufrir obras en la sede en la que se encuentra el despacho “1” y todos los trabajadores de este despacho se van a tener que trasladar al despacho “5”. Recorre la tabla de DIRECTORES, registro a registro, actualizando la información para que nuestra base de datos recoja esta circunstancia.***
 
-**Tabla**
+**Crear la siguiente tabla**
+
+![image](https://user-images.githubusercontent.com/92717152/156905784-71c927da-ebb3-4f9b-9bec-4f979e31ef54.png)
 
 ```sql
 INSERT INTO `despachos` VALUES (1,1),(2,2),(3,5);
@@ -96,7 +98,11 @@ call change_des();
 
 > Antes
 
+![image](https://user-images.githubusercontent.com/92717152/156905772-78d36eee-4970-4b2f-bec7-0296b48e369a.png)
+
 > Después
+
+![image](https://user-images.githubusercontent.com/92717152/156905763-aac202e1-6fe5-4675-a525-816a09bfb86a.png)
 
 ***Debido a una serie de cambios en la empresa, se va a producir un intercambio entre los directores D1 y D3. A partir de ese momento, los empleados que tenían como jefe al director D1 pasarán a tener como director al director D3 y viceversa. Realiza una rutina que permita implementar lo anterior.***
 
@@ -144,4 +150,8 @@ call change_dir();
 
 >Antes
 
+![image](https://user-images.githubusercontent.com/92717152/156905757-b799c990-e609-4086-81a2-34da14cc9e6e.png)
+
 > Después
+
+![image](https://user-images.githubusercontent.com/92717152/156905755-0d208531-eadc-4c18-b97f-68c5f705634d.png)

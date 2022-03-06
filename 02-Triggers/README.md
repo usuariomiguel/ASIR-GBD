@@ -62,7 +62,7 @@ VALUES
 SELECT * FROM ebanca.movimiento;
 SELECT * FROM ebanca.cuenta;
 ```
-***Ejercicio  Crea un trigger para impedir que se aumente el salario de un empleado en más de un 20%.***
+***Crea un trigger para impedir que se aumente el salario de un empleado en más de un 20%.***
 ```sql
 delimiter $$
 create trigger veinte after update on empleados for each row
